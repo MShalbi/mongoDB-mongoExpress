@@ -16,6 +16,7 @@ pipeline {
                 sh '''
                     docker compose up -d
                     docker ps
+                    docker ps -a
                 '''
             }
         }
