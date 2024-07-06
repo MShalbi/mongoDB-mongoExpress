@@ -2,14 +2,20 @@ pipeline {
     agent any
 
     stages {
-        stage('check') {
+        stage('check env') {
             steps {
                 sh '''
                     docker version
                     docker info
                     docker compose version
                     curl --version
-                    jq --version
+                '''
+            }
+            stage('run docker compose') {
+            steps {
+                sh '''
+                    docker compose up -d
+                    docker ps
                 '''
             }
         }
