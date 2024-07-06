@@ -18,6 +18,7 @@ pipeline {
                     docker ps
                     docker ps -a
                 '''
+                }
             }
         }
     }
