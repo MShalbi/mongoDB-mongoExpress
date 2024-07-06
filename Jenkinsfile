@@ -11,6 +11,7 @@ pipeline {
                     curl --version
                 '''
             }
+        }
         stage('run docker compose') {
             steps {
                 sh '''
@@ -21,5 +22,4 @@ pipeline {
                 }
             }
         }
-    }
-}
+    }   
