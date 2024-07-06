@@ -11,7 +11,7 @@ pipeline {
                     curl --version
                 '''
             }
-            stage('run docker compose') {
+        stage('run docker compose') {
             steps {
                 sh '''
                     docker compose up -d
