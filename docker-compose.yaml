@@ -5,7 +5,7 @@ services:
 
 #mongo db container
   mongo:
-    container_name: mongo-db
+    container_name: mongoDB
     image: mongo:5.0.27
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
@@ -18,12 +18,12 @@ services:
 
 #mongo exxpress container
   mongo-express:
-    container_name: mongo-express
+    container_name: mongoExpress
     image: mongo-express:1.0.2-18-alpine3.19
     ports:
       - 8085:8081
     environment:
-      - ME_CONFIG_MONGODB_SERVER=mongo-db
+      - ME_CONFIG_MONGODB_SERVER=mongoDB
       - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
       - ME_CONFIG_MONGODB_ADMINPASSWORD=admin
     depends_on:
